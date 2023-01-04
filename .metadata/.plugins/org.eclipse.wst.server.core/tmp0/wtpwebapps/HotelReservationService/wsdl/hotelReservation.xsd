@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://xml.netbeans.org/schema/hotelReservation"
+    xmlns:tns="http://xml.netbeans.org/schema/hotelReservation"
+    elementFormDefault="qualified">
+  
+  
+    <xsd:element name="HotelRequest" type="tns:HotelRequestType"/>
+    <xsd:complexType name="HotelRequestType">
+        <xsd:sequence>
+            <xsd:element name="DateFrom" type="xsd:date"/>
+            <xsd:element name="DateTo" type="xsd:date"/>
+            <xsd:element name="PriceFrom" type="xsd:int"/>
+            <xsd:element name="PriceTo" type="xsd:int"/>
+            <xsd:element name="RoomType" type="xsd:string"/>
+            <xsd:element name="Services" type="xsd:string"/>
+            <xsd:element name="RoomCode" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    
+        <xsd:element name="HotelResponse" type="tns:HotelResponseType"/>
+    <xsd:complexType name="HotelResponseType">
+        <xsd:sequence>
+            <xsd:element name="RoomID" type="xsd:int"/>
+            <xsd:element name="RoomPrice" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    
+</xsd:schema>

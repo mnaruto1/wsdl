@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/cardProcessingWSDLFile/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="cardProcessingWSDLFile" targetNamespace="http://www.example.org/cardProcessingWSDLFile/" xmlns:xsd1="http://xml.netbeans.org/schema/cardProcessing">
+  <wsdl:types>
+
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  	<xsd:import
+  		namespace="http://xml.netbeans.org/schema/cardProcessing"
+  		schemaLocation="cardProcessing.xsd">
+  	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="cardProcessingRequest">
+    <wsdl:part element="xsd1:CreditRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cardProcessingResponse">
+    <wsdl:part element="xsd1:CreditResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="cardProcessingWSDLFile">
+    <wsdl:operation name="cardProcessing">
+      <wsdl:input message="tns:cardProcessingRequest"/>
+      <wsdl:output message="tns:cardProcessingResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="cardProcessingWSDLFileSOAP" type="tns:cardProcessingWSDLFile">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="cardProcessing">
+      <soap:operation soapAction="http://www.example.org/cardProcessingWSDLFile/cardProcessing"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="cardProcessingWSDLFile">
+    <wsdl:port binding="tns:cardProcessingWSDLFileSOAP" name="cardProcessingWSDLFileSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

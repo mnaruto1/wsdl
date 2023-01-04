@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.carrental.IsLimited_type0"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.carrental.CarResponse"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.carrental.CarRequestType"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.carrental.CarResponseType"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.flight.FlightResponse"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.flight.FlightResponseType"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.hotelreservation.HotelResponse"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.hotelreservation.HotelResponseType"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.hotelreservation.HotelRequestType"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.cardprocessing.CreditResponse"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.cardprocessing.CreditRequestType"/>
+<fullyQualifiedTypeName name="org.netbeans.xml.schema.cardprocessing.CreditResponseType"/>
+</qualifiedTypeNameHistroy>

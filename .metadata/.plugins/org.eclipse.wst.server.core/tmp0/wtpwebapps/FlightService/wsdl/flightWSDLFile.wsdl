@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/flightWSDLFile/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="flightWSDLFile" targetNamespace="http://www.example.org/flightWSDLFile/" xmlns:xsd1="http://xml.netbeans.org/schema/Flight">
+  <wsdl:types>
+
+
+         <xsd:schema targetNamespace="http://www.example.org/flightWSDLFile/">
+            <xsd:import namespace="http://xml.netbeans.org/schema/Flight" schemaLocation="flight.xsd"/>
+        </xsd:schema>
+ <!--    <xsd:schema targetNamespace="http://www.example.org/flightWSDLFile/">
+      <xsd:element name="flightRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="flightRequestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+
+ <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ 	<xsd:import namespace="http://xml.netbeans.org/schema/Flight"
+ 		schemaLocation="flight.xsd">
+ 	</xsd:import></xsd:schema>
+ 	   -->
+ <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ 	<xsd:import namespace="http://xml.netbeans.org/schema/Flight"
+ 		schemaLocation="flight.xsd">
+ 	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="flightRequestRequest">
+    <wsdl:part element="xsd1:FlightRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="flightRequestResponse">
+    <wsdl:part element="xsd1:FlightResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="flightWSDLFile">
+    <wsdl:operation name="flightRequest">
+      <wsdl:input message="tns:flightRequestRequest"/>
+      <wsdl:output message="tns:flightRequestResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="flightWSDLFileSOAP" type="tns:flightWSDLFile">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="flightRequest">
+      <soap:operation soapAction="http://www.example.org/flightWSDLFile/flightRequest"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="flightWSDLFile">
+    <wsdl:port binding="tns:flightWSDLFileSOAP" name="flightWSDLFileSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/carRentalWSDLFile/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="carRentalWSDLFile" targetNamespace="http://www.example.org/carRentalWSDLFile/" xmlns:xsd1="http://xml.netbeans.org/schema/carRental">
+  <wsdl:types>
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import namespace="http://xml.netbeans.org/schema/carRental"
+    		schemaLocation="carRental.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="carRentalRequest">
+    <wsdl:part element="xsd1:CarRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="carRentalResponse">
+    <wsdl:part element="xsd1:CarResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="carRentalWSDLFile">
+    <wsdl:operation name="carRental">
+      <wsdl:input message="tns:carRentalRequest"/>
+      <wsdl:output message="tns:carRentalResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="carRentalWSDLFileSOAP" type="tns:carRentalWSDLFile">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="carRental">
+      <soap:operation soapAction="http://www.example.org/carRentalWSDLFile/carRental"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="carRentalWSDLFile">
+    <wsdl:port binding="tns:carRentalWSDLFileSOAP" name="carRentalWSDLFileSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

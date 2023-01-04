@@ -1,0 +1,59 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from flightWSDLFile WSDL service -->
+
+  <service name="flightWSDLFileSOAP" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://www.example.org/flightWSDLFile/"/>
+      <parameter name="wsdlServiceElement" value="flightWSDLFile"/>
+      <parameter name="schemaQualified" value="http://xml.netbeans.org/schema/Flight"/>
+      <parameter name="schemaUnqualified" value="http://www.example.org/flightWSDLFile/"/>
+      <parameter name="wsdlServicePort" value="flightWSDLFileSOAP"/>
+      <parameter name="className" value="org.example.www.flightWSDLFile.FlightWSDLFileSOAPSkeleton"/>
+      <parameter name="wsdlPortType" value="flightWSDLFile"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://xml.netbeans.org/schema/Flight"
+        qname="ns:FlightRequestType"
+        type="java:org.netbeans.xml.schema.Flight.FlightRequestType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://xml.netbeans.org/schema/Flight"
+        qname="ns:>FlightRequestType>Ticket"
+        type="java:org.netbeans.xml.schema.Flight.FlightRequestTypeTicket"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://xml.netbeans.org/schema/Flight"
+        qname="ns:FlightResponseType"
+        type="java:org.netbeans.xml.schema.Flight.FlightResponseType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://xml.netbeans.org/schema/Flight"
+        qname="ns:>FlightRequestType>NearWindow"
+        type="java:org.netbeans.xml.schema.Flight.FlightRequestTypeNearWindow"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="1/org.eclipse.jst.ws.wsImpl.java">
+		<item value="/CardProcessingService/WebContent/wsdl/cardProcessingWSDLFile.wsdl"/>
+		<item value="/card/WebContent/wsdl/cardProcessingWSDLFile.wsdl"/>
+		<item value="/carRentalservicee/WebContent/wsdl/carRentalWSDLFile.wsdl"/>
+		<item value="/carRentalservicee/WebContent/carRentalWSDLFile.wsdl"/>
+		<item value="/CarRentalServ/resources/carRentalWSDLFile.wsdl"/>
+		<item value="/CarRentalServ/WebContent/wsdl/carRentalWSDLFile.wsdl"/>
+	</list>
+	<list key="0/org.eclipse.jst.ws.wsImpl.java">
+		<item value="org.example.www.cardprocessingwsdlfile.CardProcessingWSDLFileSkeleton"/>
+	</list>
+</section>

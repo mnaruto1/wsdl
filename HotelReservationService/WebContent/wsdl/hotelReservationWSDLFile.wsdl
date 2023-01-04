@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/hotelReservationWSDLFile/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="hotelReservationWSDLFile" targetNamespace="http://www.example.org/hotelReservationWSDLFile/" xmlns:xsd1="http://xml.netbeans.org/schema/hotelReservation">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/hotelReservationWSDLFile/">
+      <xsd:element name="hotelReservation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hotelReservationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://xml.netbeans.org/schema/hotelReservation"
+    		schemaLocation="hotelReservation.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="hotelReservationRequest">
+    <wsdl:part element="xsd1:HotelRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="hotelReservationResponse">
+    <wsdl:part element="xsd1:HotelResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="hotelReservationWSDLFile">
+    <wsdl:operation name="hotelReservation">
+      <wsdl:input message="tns:hotelReservationRequest"/>
+      <wsdl:output message="tns:hotelReservationResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="hotelReservationWSDLFileSOAP" type="tns:hotelReservationWSDLFile">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="hotelReservation">
+      <soap:operation soapAction="http://www.example.org/hotelReservationWSDLFile/hotelReservation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="hotelReservationWSDLFile">
+    <wsdl:port binding="tns:hotelReservationWSDLFileSOAP" name="hotelReservationWSDLFileSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

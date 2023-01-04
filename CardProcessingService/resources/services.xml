@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST) --><serviceGroup>
+    <service name="cardProcessingWSDLFile">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.example.www.cardprocessingwsdlfile.CardProcessingWSDLFileMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.example.www.cardprocessingwsdlfile.CardProcessingWSDLFileSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="cardProcessing" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/cardProcessingWSDLFile/">
+            <actionMapping>http://www.example.org/cardProcessingWSDLFile/cardProcessing</actionMapping>
+            <outputActionMapping>http://www.example.org/cardProcessingWSDLFile/cardProcessingWSDLFile/cardProcessingResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xml.netbeans.org/schema/carRental" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xml.netbeans.org/schema/carRental">
+    <xsd:element name="CarRequest" type="tns:CarRequestType"/>
+    <xsd:complexType name="CarRequestType">
+        <xsd:sequence>
+            <xsd:element name="Company" type="xsd:string"/>
+            <xsd:element name="RentPeriod" type="xsd:int"/>
+            <xsd:element name="RentDate" type="xsd:date"/>
+            <xsd:element name="Promo" type="xsd:int"/>
+            <xsd:element name="Car" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="CarResponse" type="tns:CarResponseType"/>
+    <xsd:complexType name="CarResponseType">
+        <xsd:sequence>
+            <xsd:element name="Price" type="xsd:int"/>
+            <xsd:element name="Discount" type="xsd:int"/>
+            <xsd:element name="Pref" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
